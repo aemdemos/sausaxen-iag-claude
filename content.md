@@ -1,81 +1,107 @@
-# The Knowledge Keepers
++---------------------------------------------------------------+
+| **Hero**                                                      |
++---------------------------------------------------------------+
+| ![Mumbai Gateway of India](/images/mumbai-hero.jpg)          |
++---------------------------------------------------------------+
+| # **Mumbai**                                                  |
+|                                                               |
+| Explore the city of dreams                                    |
++---------------------------------------------------------------+
 
-+---------------------------------------------------------------------------------------------------+
-| **Hero**                                                                                          |
-+---------------------------------------------------------------------------------------------------+
-| ![The Knowledge Keepers title](./assets/YvNE6U0c4A/knowledge_title-2396x1677.png)                |
-+---------------------------------------------------------------------------------------------------+
-| # **In a changing climate, this powerful documentary draws on some 65 thousand years of           |
-| Indigenous knowledge, to help us better prepare for the future.**                                 |
-|                                                                                                   |
-| **[Stream free on SBS On-Demand](https://www.sbs.com.au/ondemand/tv-program/the-knowledge-keepers/2416885827711)** |
-+---------------------------------------------------------------------------------------------------+
+## How to Reach Mumbai
 
----
-
-+-----------------------------------------------------------------------+-----------------------------------------------------------+
-| **Columns**                                                                                                       |
-+-----------------------------------------------------------------------+-----------------------------------------------------------+
-| ## When a group of children gather round a campfire to hear stories   | ![Children around campfire](./assets/lRmL3daxFv/knowledge_web_2-1319x1080.jpg) |
-| from First Nation practitioners about our rapidly changing climate,   |                                                           |
-| they are taken on a journey of discovery.                             |                                                           |
-|                                                                       |                                                           |
-| Traversing the country, we are introduced to storytellers who draw    |                                                           |
-| on the past to help us prepare for the future.                        |                                                           |
-|                                                                       |                                                           |
-| With thought provoking questions and answers, we learn about cultural |                                                           |
-| practices for Fire, Flood, Heat, and weather preparedness.            |                                                           |
-|                                                                       |                                                           |
-| > **"Knowledge is only powerful when it's shared."**                  |                                                           |
-| >                                                                     |                                                           |
-| > _Den Barber - Cultural Fire Practitioner_                           |                                                           |
-|                                                                       |                                                           |
-| Watch the trailer below.                                              |                                                           |
-+-----------------------------------------------------------------------+-----------------------------------------------------------+
+Mumbai, the financial capital of India, is well-connected by air, rail, and road.
 
 ---
 
-## Watch the Documentary
+## Places to Visit
 
-+-----------------------------------------------+
-| **Video**                                     |
-+-----------------------------------------------+
-| <https://www.youtube.com/watch?v=TRAILER_ID>  |
-+-----------------------------------------------+
-
----
-
-## The Knowledge Keepers
-
-NRMA Insurance is proud to support the making of this film in partnership with [Campfire x](https://www.campfirex.co/), an Indigenous creative-led agency. Our goal is to share Indigenous preparedness knowledge through storytelling.
-
-+-------------------------------------------+--------------------------------------------+--------------------------------------------+
-| **Cards**                                                                                                                       |
-+-------------------------------------------+--------------------------------------------+--------------------------------------------+
-| ![Fire thumbnail](./assets/GCjy280poB/kk_60sfire_branded-frame-0ms-1920x1080.jpg) | ![Flood thumbnail](./assets/qIbUV9Svko/kk_60sflood_branded-frame-0ms-1920x1080.jpg) | ![Heat thumbnail](./assets/l5QuLD8y4W/kk_60sheat_branded-frame-0ms-1920x1080.jpg) |
-+-------------------------------------------+--------------------------------------------+--------------------------------------------+
-| ### **Fire**                              | ### **Flood**                              | ### **Heat**                               |
-|                                           |                                            |                                            |
-| Explore the benefits of healing country   | Floods are a part of Australian life.      | From Indigenous architects to gardeners,   |
-| through controlled cultural burning and   | Hear from traditional land practitioners   | discover different cooling strategies to   |
-| land management to reduce bushfire risk   | hoping to build more disaster resilient    | reduce the impact of heat.                 |
-| and maintain ecological balance.          | communities.                               |                                            |
-+-------------------------------------------+--------------------------------------------+--------------------------------------------+
-
----
-
-+---------------------------------------------------------------------------------------------------+
-| **Hero**                                                                                          |
-+---------------------------------------------------------------------------------------------------+
-| ![Help Nation background](./assets/fvxnOzdkJT/shutterstock_1063847050-frame-0ms-1920x1080.jpg)   |
-+---------------------------------------------------------------------------------------------------+
-| # **The only way to help our nation is as a nation.**                                            |
-|                                                                                                   |
-| # **Explore how you can get prepared for extreme weather.**                                      |
-|                                                                                                   |
-| **[Visit Help Nation](https://nrma.com.au/helpnation/)**                                         |
-+---------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------+---------------------------------------------------------------+
+| **Cards**                                                                                                                             |
++---------------------------------------------------------------+---------------------------------------------------------------+
+| ![Gateway of India](/images/gateway-of-india.jpg)            | ### **Gateway of India**                                      |
+|                                                               |                                                               |
+|                                                               | An iconic monument overlooking the Arabian Sea.              |
++---------------------------------------------------------------+---------------------------------------------------------------+
+| ![Juhu Beach](/images/juhu-beach.jpg)                        | ### **Juhu Beach**                                            |
+|                                                               |                                                               |
+|                                                               | Popular beach destination for locals and tourists.            |
++---------------------------------------------------------------+---------------------------------------------------------------+
+| ![Chhatrapati Shivaji Terminus](/images/cst.jpg)             | ### **Chhatrapati Shivaji Maharaj Terminus**                  |
+|                                                               |                                                               |
+|                                                               | UNESCO World Heritage Site and historic railway station.      |
++---------------------------------------------------------------+---------------------------------------------------------------+
+| ![Marine Drive](/images/marine-drive.jpg)                    | ### **Marine Drive**                                          |
+|                                                               |                                                               |
+|                                                               | Scenic coastal promenade known as Queens Necklace.            |
++---------------------------------------------------------------+---------------------------------------------------------------+
+| ![Elephanta Caves](/images/elephanta-caves.jpg)              | ### **Elephanta Caves**                                       |
+|                                                               |                                                               |
+|                                                               | Ancient rock-cut temples on Elephanta Island.                 |
++---------------------------------------------------------------+---------------------------------------------------------------+
+| ![Bandra-Worli Sea Link](/images/sea-link.jpg)               | ### **Bandra-Worli Sea Link**                                 |
+|                                                               |                                                               |
+|                                                               | Engineering marvel connecting Western suburbs.                |
++---------------------------------------------------------------+---------------------------------------------------------------+
 
 ---
 
-_All content is intended to be general in nature and does not constitute and is not intended to be financial or professional advice. While NRMA Insurance has tried to ensure this website's accuracy, you should not rely on any representation, statement or information on this website without first making your own enquiries about the accuracy and reliability of the information provided. NRMA Insurance does not accept any liability for the information provided on this site or for loss or damages resulting from reliance on the information contained on this site. © Insurance Australia Limited ABN 11 000 016 722 AFSL 227681 trading as NRMA Insurance. Insurance issued by Insurance Australia Limited trading as NRMA Insurance. This is general advice only and does not take into account your individual objectives, financial situation or needs ("your personal circumstances"). Before using this advice to decide whether to purchase a product, you should consider your personal circumstances and the relevant [Product Disclosure Statement](https://www.nrma.com.au/policy-booklets) and Target Market Determinations available from [nrma.com.au](http://www.nrma.com.au)._
+## Places to Eat
+
++-------------------------------------------------------------------------+---------------------------------------------------------------+
+| **Carousel**                                                                                                                                            |
++-------------------------------------------------------------------------+---------------------------------------------------------------+
+| ![Restaurant](/images/restaurant-1.jpg)                                 | ### **Local Dining**                                          |
+|                                                                         |                                                               |
+|                                                                         | Traditional Mumbai cuisine and flavors                        |
++-------------------------------------------------------------------------+---------------------------------------------------------------+
+
+---
+
+## Where to Stay
+
++-------------------------------------------------------------------------+---------------------------------------------------------------+
+| **Carousel**                                                                                                                                            |
++-------------------------------------------------------------------------+---------------------------------------------------------------+
+| ![Hotel](/images/hotel-1.jpg)                                           | ### **Accommodation**                                         |
+|                                                                         |                                                               |
+|                                                                         | Comfortable stay options across the city                      |
++-------------------------------------------------------------------------+---------------------------------------------------------------+
+
+---
+
+## Things To Do
+
++-------------------------------------------------------------------------+---------------------------------------------------------------+
+| **Carousel**                                                                                                                                            |
++-------------------------------------------------------------------------+---------------------------------------------------------------+
+| ![Activity](/images/activity-1.jpg)                                     | ### **City Experiences**                                      |
+|                                                                         |                                                               |
+|                                                                         | Exciting activities and cultural explorations                 |
++-------------------------------------------------------------------------+---------------------------------------------------------------+
+
+---
+
+## Best Time to Visit
+
+Mumbai can be visited year-round, with October to February being the most pleasant months for sightseeing.
+
+---
+
+## Festivals
+
++-------------------------------------------------------------------------+---------------------------------------------------------------+
+| **Carousel**                                                                                                                                            |
++-------------------------------------------------------------------------+---------------------------------------------------------------+
+| ![Ganesh Chaturthi](/images/ganesh-chaturthi.jpg)                      | ### **Ganesh Chaturthi**                                      |
+|                                                                         |                                                               |
+|                                                                         | Grand celebration of Lord Ganesha                             |
++-------------------------------------------------------------------------+---------------------------------------------------------------+
+| ![Navratri](/images/navratri.jpg)                                      | ### **Navratri**                                              |
+|                                                                         |                                                               |
+|                                                                         | Nine nights of traditional dance                              |
++-------------------------------------------------------------------------+---------------------------------------------------------------+
+| ![Diwali](/images/diwali.jpg)                                          | ### **Diwali**                                                |
+|                                                                         |                                                               |
+|                                                                         | Festival of lights                                            |
++-------------------------------------------------------------------------+---------------------------------------------------------------+
