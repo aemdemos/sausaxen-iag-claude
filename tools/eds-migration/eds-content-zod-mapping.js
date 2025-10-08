@@ -18,17 +18,17 @@ const DefaultContentElementSchema = z.object({
     alt: z.string(),
     srcset: z.string().optional(),
     sizes: z.string().optional(),
-    formats: z.array(z.string()).optional() // webp, png, etc.
+    formats: z.array(z.string()).optional(), // webp, png, etc.
   }).optional(),
   // For links
   href: z.string().optional(),
-  target: z.string().optional()
+  target: z.string().optional(),
 });
 
 // Block Content (table-based structure)
 const BlockContentSchema = z.object({
   rows: z.array(z.array(z.string())), // Table rows and columns
-  metadata: z.record(z.string()).optional()
+  metadata: z.record(z.string()).optional(),
 });
 
 // Block Definition
@@ -36,7 +36,7 @@ const BlockSchema = z.object({
   name: z.string(), // Block name (first row of table)
   options: z.array(z.string()).optional(), // Parenthetical modifiers
   content: BlockContentSchema,
-  metadata: z.record(z.string()).optional()
+  metadata: z.record(z.string()).optional(),
 });
 
 // Section Metadata (for styling and attributes)
@@ -44,7 +44,7 @@ const SectionMetadataSchema = z.object({
   style: z.string().optional(), // CSS classes
   customAttributes: z.record(z.string()).optional(),
   background: z.string().optional(),
-  layout: z.string().optional()
+  layout: z.string().optional(),
 });
 
 // Section Definition
@@ -54,11 +54,11 @@ const SectionSchema = z.object({
   metadata: SectionMetadataSchema.optional(),
   content: z.object({
     defaultContent: z.array(DefaultContentElementSchema),
-    blocks: z.array(BlockSchema)
+    blocks: z.array(BlockSchema),
   }),
   // Section can contain both default content and blocks
   hasDefaultContent: z.boolean().optional(),
-  hasBlocks: z.boolean().optional()
+  hasBlocks: z.boolean().optional(),
 });
 
 // Page-level metadata
@@ -72,7 +72,7 @@ const PageMetadataSchema = z.object({
   lastModified: z.string().optional(),
   tags: z.array(z.string()).optional(),
   // EDS-specific metadata
-  sectionBreaks: z.array(z.string()).optional() // Where sections are separated
+  sectionBreaks: z.array(z.string()).optional(), // Where sections are separated
 });
 
 // Main EDS Page Schema (Simplified)
@@ -85,10 +85,14 @@ const EDSPageSchema = z.object({
     totalBlocks: z.number(),
     totalDefaultContent: z.number(),
     blockTypes: z.array(z.string()),
-    sectionStyles: z.array(z.string())
-  }).optional()
+    sectionStyles: z.array(z.string()),
+  }).optional(),
 });
 
 // Export the main schema
-export { EDSPageSchema, SectionSchema, BlockSchema, DefaultContentElementSchema };
-
+export {
+  EDSPageSchema,
+  SectionSchema,
+  BlockSchema,
+  DefaultContentElementSchema,
+};

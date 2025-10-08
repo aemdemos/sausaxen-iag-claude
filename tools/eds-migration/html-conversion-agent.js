@@ -17,7 +17,7 @@ import parseMarkdown from '@adobe/helix-html-pipeline/src/steps/parse-markdown.j
 import split from '@adobe/helix-html-pipeline/src/steps/split-sections.js';
 import fixSections from '@adobe/helix-html-pipeline/src/steps/fix-sections.js';
 import createPageBlocks from '@adobe/helix-html-pipeline/src/steps/create-page-blocks.js';
-import { makeUrlsAbsolute, makeMarkdownUrlsAbsolute, extractDomain } from './utils/url-processor.js';
+import { makeUrlsAbsolute, makeMarkdownUrlsAbsolute } from './utils/url-processor.js';
 import { fixGridTableFormatting } from './utils/table-formatting.js';
 
 /**
@@ -33,15 +33,13 @@ function md2htmlInternal(md) {
   split(state);
 
   html(state);
-    
+
   fixSections(state);
   createPageBlocks(state);
-  
   return toHtml(state.content.hast, {
     upperDoctype: true,
   });
 }
-
 
 /**
  * HTML Conversion Agent
@@ -50,44 +48,34 @@ function md2htmlInternal(md) {
 export async function convertToHtml(state) {
   try {
     const { edsMapping, url } = state;
-    
+
     if (!edsMapping) {
-      console.log('No EDS mapping available, skipping HTML conversion');
       return state;
     }
-    
+
     // Process URLs in markdown first (before HTML conversion)
     let processedMarkdown = edsMapping;
     if (url) {
-      console.log(`Processing relative URLs in markdown against base: ${extractDomain(url)}`);
       processedMarkdown = makeMarkdownUrlsAbsolute(edsMapping, url);
-      console.log('Markdown URLs processed to absolute URLs');
       processedMarkdown = fixGridTableFormatting(processedMarkdown);
-      console.log('Markdown tables fixed');
     }
-    
+
     // Convert to DA compliant HTML
     let htmlContent = `<body><main>${md2htmlInternal(processedMarkdown)}</main></body>`;
-    console.log('Converting markdown to DA compliant HTML');
-    
+
     // Process remaining URLs in HTML (for any URLs that weren't in markdown format)
     if (url) {
-      console.log(`Processing remaining relative URLs in HTML against base: ${extractDomain(url)}`);
       htmlContent = makeUrlsAbsolute(htmlContent, url);
-      console.log('HTML URLs processed to absolute URLs');
-    } else {
-      console.log('No original URL available, keeping relative URLs as-is');
     }
-    
+
     return {
       ...state,
-      htmlContent
+      htmlContent,
     };
   } catch (error) {
-    console.error('Error converting to HTML:', error);
     return {
       ...state,
-      errors: [...(state.errors || []), `HTML conversion failed: ${error.message}`]
+      errors: [...(state.errors || []), `HTML conversion failed: ${error.message}`],
     };
   }
 }

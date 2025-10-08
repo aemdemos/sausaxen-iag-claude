@@ -27,22 +27,22 @@ export function makeUrlsAbsolute(htmlContent, baseUrl) {
 
   try {
     const base = new URL(baseUrl);
-    
+
     // Process different URL attributes
     let processedHtml = htmlContent;
-    
+
     // Process image src attributes
     processedHtml = processImageSrcAttributes(processedHtml, base);
-    
+
     // Process image srcset attributes
     processedHtml = processImageSrcsetAttributes(processedHtml, base);
-    
+
     // Process link href attributes
     processedHtml = processLinkHrefAttributes(processedHtml, base);
-    
+
     // Process other common URL attributes
     processedHtml = processOtherUrlAttributes(processedHtml, base);
-    
+
     return processedHtml;
   } catch (error) {
     console.error('Error processing URLs:', error);
@@ -59,7 +59,7 @@ export function makeUrlsAbsolute(htmlContent, baseUrl) {
 function processImageSrcAttributes(html, base) {
   // Match img tags with src attributes
   const imgSrcRegex = /<img([^>]*)\ssrc\s*=\s*["']([^"']+)["']([^>]*)/gi;
-  
+
   return html.replace(imgSrcRegex, (match, beforeSrc, srcUrl, afterSrc) => {
     const absoluteUrl = makeUrlAbsolute(srcUrl, base);
     return `<img${beforeSrc} src="${absoluteUrl}"${afterSrc}`;
@@ -75,7 +75,7 @@ function processImageSrcAttributes(html, base) {
 function processImageSrcsetAttributes(html, base) {
   // Match img tags with srcset attributes
   const imgSrcsetRegex = /<img([^>]*)\ssrcset\s*=\s*["']([^"']+)["']([^>]*)/gi;
-  
+
   return html.replace(imgSrcsetRegex, (match, beforeSrcset, srcsetValue, afterSrcset) => {
     // Process srcset value - it contains multiple URLs with descriptors
     const processedSrcset = processSrcsetValue(srcsetValue, base);
@@ -86,23 +86,23 @@ function processImageSrcsetAttributes(html, base) {
 /**
  * Process srcset value containing multiple URLs and descriptors
  * @param {string} srcsetValue - The srcset attribute value
- * @param {URL} base - Base URL object  
+ * @param {URL} base - Base URL object
  * @returns {string} - Processed srcset value
  */
 function processSrcsetValue(srcsetValue, base) {
   // Split by comma to get individual entries
-  const entries = srcsetValue.split(',').map(entry => entry.trim());
-  
-  const processedEntries = entries.map(entry => {
+  const entries = srcsetValue.split(',').map((entry) => entry.trim());
+
+  const processedEntries = entries.map((entry) => {
     // Each entry can be "url descriptor" or just "url"
     const parts = entry.trim().split(/\s+/);
     const url = parts[0];
     const descriptor = parts.slice(1).join(' '); // Everything after the URL
-    
+
     const absoluteUrl = makeUrlAbsolute(url, base);
     return descriptor ? `${absoluteUrl} ${descriptor}` : absoluteUrl;
   });
-  
+
   return processedEntries.join(', ');
 }
 
@@ -115,7 +115,7 @@ function processSrcsetValue(srcsetValue, base) {
 function processLinkHrefAttributes(html, base) {
   // Match a tags with href attributes
   const linkHrefRegex = /<a([^>]*)\shref\s*=\s*["']([^"']+)["']([^>]*)/gi;
-  
+
   return html.replace(linkHrefRegex, (match, beforeHref, hrefUrl, afterHref) => {
     const absoluteUrl = makeUrlAbsolute(hrefUrl, base);
     return `<a${beforeHref} href="${absoluteUrl}"${afterHref}`;
@@ -130,35 +130,35 @@ function processLinkHrefAttributes(html, base) {
  */
 function processOtherUrlAttributes(html, base) {
   let processedHtml = html;
-  
+
   // Process CSS background-image in style attributes
   const styleBackgroundRegex = /style\s*=\s*["']([^"']*background-image\s*:\s*url\(["']?)([^"')]+)(["']?\)[^"']*)["']/gi;
   processedHtml = processedHtml.replace(styleBackgroundRegex, (match, beforeUrl, url, afterUrl) => {
     const absoluteUrl = makeUrlAbsolute(url, base);
     return `style="${beforeUrl}${absoluteUrl}${afterUrl}"`;
   });
-  
+
   // Process video src attributes
   const videoSrcRegex = /<video([^>]*)\ssrc\s*=\s*["']([^"']+)["']([^>]*)/gi;
   processedHtml = processedHtml.replace(videoSrcRegex, (match, beforeSrc, srcUrl, afterSrc) => {
     const absoluteUrl = makeUrlAbsolute(srcUrl, base);
     return `<video${beforeSrc} src="${absoluteUrl}"${afterSrc}`;
   });
-  
+
   // Process source src attributes (for video/audio/picture elements)
   const sourceSrcRegex = /<source([^>]*)\ssrc\s*=\s*["']([^"']+)["']([^>]*)/gi;
   processedHtml = processedHtml.replace(sourceSrcRegex, (match, beforeSrc, srcUrl, afterSrc) => {
     const absoluteUrl = makeUrlAbsolute(srcUrl, base);
     return `<source${beforeSrc} src="${absoluteUrl}"${afterSrc}`;
   });
-  
+
   // Process link rel="stylesheet" href attributes
   const stylesheetRegex = /<link([^>]*)\shref\s*=\s*["']([^"']+)["']([^>]*)/gi;
   processedHtml = processedHtml.replace(stylesheetRegex, (match, beforeHref, hrefUrl, afterHref) => {
     const absoluteUrl = makeUrlAbsolute(hrefUrl, base);
     return `<link${beforeHref} href="${absoluteUrl}"${afterHref}`;
   });
-  
+
   return processedHtml;
 }
 
@@ -172,26 +172,26 @@ function makeUrlAbsolute(url, base) {
   if (!url || typeof url !== 'string') {
     return url;
   }
-  
+
   // Skip if already absolute (has protocol)
   if (/^https?:\/\//.test(url)) {
     return url;
   }
-  
+
   // Skip if it's a data URL, mailto, tel, etc.
   if (/^(data:|mailto:|tel:|#)/.test(url)) {
     return url;
   }
-  
+
   // Skip if it's a JavaScript pseudo-protocol
   if (/^javascript:/i.test(url)) {
     return url;
   }
-  
+
   try {
     // Use URL constructor to resolve relative URLs
     const absoluteUrl = new URL(url, base.href);
-    
+
     // Return properly encoded URL (spaces become %20, etc.)
     return absoluteUrl.href;
   } catch (error) {
@@ -254,26 +254,26 @@ function makeUrlAbsoluteForMarkdown(url, base) {
   if (!url || typeof url !== 'string') {
     return url;
   }
-  
+
   // Skip if already absolute (has protocol)
   if (/^https?:\/\//.test(url)) {
     return url;
   }
-  
+
   // Skip if it's a data URL, mailto, tel, etc.
   if (/^(data:|mailto:|tel:|#)/.test(url)) {
     return url;
   }
-  
+
   // Skip if it's a JavaScript pseudo-protocol
   if (/^javascript:/i.test(url)) {
     return url;
   }
-  
+
   try {
     // Use URL constructor to resolve relative URLs
     const absoluteUrl = new URL(url, base.href);
-    
+
     // Return properly encoded URL (spaces become %20, etc.)
     return absoluteUrl.href;
   } catch (error) {

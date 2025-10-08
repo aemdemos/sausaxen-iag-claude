@@ -1,15 +1,21 @@
 #!/usr/bin/env node
 
 import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
+// import { dirname } from 'path'; // Not currently used
 import { readFileSync, writeFileSync } from 'fs';
 import { convertToHtml } from './html-conversion-agent.js';
 import { uploadToDa } from './da-upload-agent.js';
 import { fixGridTableFormatting } from './utils/table-formatting.js';
 import { makeUrlsAbsolute, makeMarkdownUrlsAbsolute } from './utils/url-processor.js';
 
+// Simple logger to replace console statements
+const logger = {
+  log: (message) => process.stdout.write(`${message}\n`),
+  error: (message) => process.stderr.write(`${message}\n`),
+};
+
+// eslint-disable-next-line no-underscore-dangle, no-unused-vars
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 const commands = {
   'convert-html': {
@@ -28,11 +34,11 @@ const commands = {
       const result = await convertToHtml(state);
 
       if (result.errors?.length > 0) {
-        console.error('Errors:', result.errors);
+        logger.error(`Errors: ${result.errors.join(', ')}`);
         process.exit(1);
       }
 
-      console.log(result.htmlContent);
+      logger.log(result.htmlContent);
       writeFileSync('content.html', result.htmlContent);
     },
   },
@@ -64,11 +70,11 @@ const commands = {
       const result = await uploadToDa(state);
 
       if (result.errors?.length > 0) {
-        console.error('Errors:', result.errors);
+        logger.error(`Errors: ${result.errors.join(', ')}`);
         process.exit(1);
       }
 
-      console.log('Upload successful:', result.daUploadUrl);
+      logger.log(`Upload successful: ${result.daUploadUrl}`);
     },
   },
 
@@ -84,7 +90,7 @@ const commands = {
 
       const markdown = readFileSync(markdownFile, 'utf-8');
       const fixed = fixGridTableFormatting(markdown);
-      console.log(fixed);
+      logger.log(fixed);
     },
   },
 
@@ -109,7 +115,7 @@ const commands = {
         processed = makeUrlsAbsolute(content, baseUrl);
       }
 
-      console.log(processed);
+      logger.log(processed);
     },
   },
 
@@ -129,7 +135,7 @@ const commands = {
         throw new Error('Bearer token required. Provide via --token or DA_BEARER_TOKEN env var');
       }
 
-      console.log(`Downloading from DA: ${daUrl}`);
+      logger.log(`Downloading from DA: ${daUrl}`);
 
       const response = await fetch(daUrl, {
         headers: {
@@ -146,12 +152,12 @@ const commands = {
 
       if (output) {
         writeFileSync(output, content, 'utf-8');
-        console.log(`Content saved to: ${output}`);
+        logger.log(`Content saved to: ${output}`);
       } else {
-        console.log(content);
+        logger.log(content);
       }
 
-      console.log(`Download successful from: ${daUrl}`);
+      logger.log(`Download successful from: ${daUrl}`);
     },
   },
 
@@ -176,7 +182,7 @@ const commands = {
       const cleanPath = path.startsWith('/') ? path.slice(1) : path;
       const previewApiUrl = `https://admin.hlx.page/preview/${org}/${site}/${ref}/${cleanPath}`;
 
-      console.log(`Triggering preview build: ${previewApiUrl}`);
+      logger.log(`Triggering preview build: ${previewApiUrl}`);
 
       const response = await fetch(previewApiUrl, {
         method: 'POST',
@@ -191,16 +197,16 @@ const commands = {
       }
 
       const result = await response.text();
-      console.log('Preview build triggered successfully');
+      logger.log('Preview build triggered successfully');
 
       // Generate preview URL
       const pathWithoutHtml = cleanPath.replace(/\.html$/, '');
       const previewUrl = `https://${ref}--${site}--${org}.aem.page/${pathWithoutHtml}`;
 
-      console.log(`Preview URL: ${previewUrl}`);
+      logger.log(`Preview URL: ${previewUrl}`);
 
       if (result) {
-        console.log('API Response:', result);
+        logger.log(`API Response: ${result}`);
       }
     },
   },
@@ -220,11 +226,11 @@ function parseArgs(argv) {
         i += 2;
       } else {
         args[key] = true;
-        i++;
+        i += 1;
       }
     } else {
       args._.push(arg);
-      i++;
+      i += 1;
     }
   }
 
@@ -232,13 +238,13 @@ function parseArgs(argv) {
 }
 
 function showHelp() {
-  console.log('Usage: node cli.js <command> [options]');
-  console.log('\nCommands:');
+  logger.log('Usage: node cli.js <command> [options]');
+  logger.log('\nCommands:');
 
   Object.entries(commands).forEach(([name, cmd]) => {
-    console.log(`  ${name.padEnd(15)} ${cmd.description}`);
-    console.log(`  ${' '.repeat(15)} ${cmd.usage}`);
-    console.log();
+    logger.log(`  ${name.padEnd(15)} ${cmd.description}`);
+    logger.log(`  ${' '.repeat(15)} ${cmd.usage}`);
+    logger.log('');
   });
 }
 
@@ -253,7 +259,7 @@ async function main() {
 
   const cmd = commands[command];
   if (!cmd) {
-    console.error(`Unknown command: ${command}`);
+    logger.error(`Unknown command: ${command}`);
     showHelp();
     process.exit(1);
   }
@@ -261,9 +267,9 @@ async function main() {
   try {
     await cmd.handler(args);
   } catch (error) {
-    console.error('Error:', error.message);
+    logger.error(`Error: ${error.message}`);
     process.exit(1);
   }
 }
 
-main().catch(console.error);
+main().catch((error) => logger.error(`Fatal error: ${error.message}`));

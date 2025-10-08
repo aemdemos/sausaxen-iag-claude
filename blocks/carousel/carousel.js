@@ -1,18 +1,5 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
-function updateActiveSlide(block) {
-  const slides = block.querySelectorAll('.carousel-slide');
-  const indicators = block.querySelectorAll('.carousel-indicator');
-
-  slides.forEach((slide, index) => {
-    if (slide.classList.contains('carousel-slide-active')) {
-      indicators[index]?.classList.add('carousel-indicator-active');
-    } else {
-      indicators[index]?.classList.remove('carousel-indicator-active');
-    }
-  });
-}
-
 function showSlide(block, slideIndex = 0) {
   const slides = block.querySelectorAll('.carousel-slide');
   const indicators = block.querySelectorAll('.carousel-indicator');
@@ -55,7 +42,7 @@ function bindEvents(block) {
   });
 }
 
-function createNavigationButtons(block) {
+function createNavigationButtons() {
   const nav = document.createElement('div');
   nav.className = 'carousel-navigation';
 
@@ -73,7 +60,7 @@ function createNavigationButtons(block) {
   return nav;
 }
 
-function createIndicators(block, slidesCount) {
+function createIndicators(slidesCount) {
   const indicators = document.createElement('div');
   indicators.className = 'carousel-indicators';
 
@@ -133,8 +120,8 @@ export default function decorate(block) {
   // Add navigation if more than one slide
   const slidesCount = slidesWrapper.children.length;
   if (slidesCount > 1) {
-    const nav = createNavigationButtons(block);
-    const indicators = createIndicators(block, slidesCount);
+    const nav = createNavigationButtons();
+    const indicators = createIndicators(slidesCount);
     block.append(nav, indicators);
     bindEvents(block);
   }
