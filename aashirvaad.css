@@ -1,0 +1,277 @@
+/* Aashirvaad Brand Styling - Based on design tokens extracted from https://aashirvaad.com */
+
+/* CSS Custom Properties */
+:root {
+  /* Colors */
+  --color-primary: #DA001C;
+  --color-text: #000000;
+  --color-button-text: #FFF6E3;
+  --color-background: #FFFFFF;
+  --color-light-bg: #F8F8F8;
+
+  /* Typography */
+  --font-body: 'Poppins', sans-serif;
+  --font-heading: 'Libre Baskerville', serif;
+  --font-size-base: 16px;
+  --font-size-h1: 40px;
+  --font-size-h2: 32px;
+  --font-size-h3: 24px;
+  --line-height-base: 1.6;
+
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 40px;
+  --spacing-xl: 60px;
+
+  /* Layout */
+  --max-width: 1200px;
+  --border-radius: 8px;
+}
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+main {
+  padding-top: 76px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: bold;
+  line-height: 1.3;
+  margin-bottom: var(--spacing-sm);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  margin-bottom: var(--spacing-md);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  margin-bottom: var(--spacing-sm);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  margin-bottom: var(--spacing-sm);
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+a strong,
+.button {
+  display: inline-block;
+  padding: 12px 32px;
+  background-color: var(--color-primary);
+  color: var(--color-button-text);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+a strong:hover,
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(218, 0, 28, 0.3);
+  text-decoration: none;
+}
+
+/* Carousel Block */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--spacing-xl);
+}
+
+.carousel > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--border-radius);
+}
+
+.carousel h2 {
+  color: var(--color-primary);
+  margin-top: var(--spacing-sm);
+}
+
+.carousel p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* Cards Block */
+.cards {
+  margin: var(--spacing-xl) 0;
+}
+
+.cards > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.cards > div > div {
+  background: var(--color-background);
+  border: 1px solid #E0E0E0;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cards > div > div:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.cards img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.cards h3 {
+  padding: var(--spacing-sm);
+  color: var(--color-primary);
+  font-size: 20px;
+  text-align: center;
+}
+
+.cards p {
+  padding: 0 var(--spacing-sm) var(--spacing-sm);
+  font-size: 14px;
+  color: #666;
+}
+
+/* Columns Block */
+.columns {
+  margin: var(--spacing-xl) 0;
+}
+
+.columns > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-md);
+}
+
+.columns > div > div {
+  padding: var(--spacing-md);
+}
+
+.columns h3 {
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.columns p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Section Spacing */
+body > main > div {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  :root {
+    --font-size-h1: 32px;
+    --font-size-h2: 24px;
+    --font-size-h3: 20px;
+  }
+
+  main {
+    padding-top: 60px;
+  }
+
+  .cards > div {
+    grid-template-columns: 1fr;
+  }
+
+  .columns > div {
+    grid-template-columns: 1fr;
+  }
+
+  body > main > div {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .cards > div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .columns > div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Recipe Cards Specific Styling */
+.cards > div > div p:first-of-type {
+  font-style: italic;
+  color: #888;
+  font-size: 13px;
+}
+
+/* Accessibility */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a:focus,
+button:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  .carousel,
+  .cards > div > div,
+  .columns > div > div {
+    break-inside: avoid;
+  }
+}

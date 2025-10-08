@@ -1,0 +1,15 @@
+{
+  "assets": [
+    "https://goldenharvest.example.com/images/golden-harvest/golden-hero.jpg",
+    "https://goldenharvest.example.com/images/golden-harvest/product-wheat-flour.jpg",
+    "https://goldenharvest.example.com/images/golden-harvest/product-multigrain.jpg",
+    "https://goldenharvest.example.com/images/golden-harvest/product-brown-rice.jpg",
+    "https://goldenharvest.example.com/images/golden-harvest/product-quinoa.jpg",
+    "https://goldenharvest.example.com/images/golden-harvest/product-oats.jpg",
+    "https://goldenharvest.example.com/images/golden-harvest/product-millet.jpg",
+    "https://goldenharvest.example.com/images/golden-harvest/testimonial-1.jpg",
+    "https://goldenharvest.example.com/images/golden-harvest/testimonial-2.jpg",
+    "https://goldenharvest.example.com/images/golden-harvest/testimonial-3.jpg"
+  ],
+  "siteOrigin": "https://goldenharvest.example.com"
+}
