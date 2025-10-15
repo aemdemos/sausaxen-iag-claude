@@ -1,0 +1,33 @@
+/* BabyLab Hero - Simple hero image display */
+
+.hero-babylab {
+  position: relative;
+  padding: 0;
+  min-height: auto;
+  margin: 0;
+}
+
+.hero-babylab picture {
+  position: static;
+  z-index: auto;
+  display: block;
+}
+
+.hero-babylab picture img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Remove any text content styling since this hero is image-only */
+.hero-babylab > div {
+  margin: 0;
+  padding: 0;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .hero-babylab {
+    min-height: auto;
+  }
+}
