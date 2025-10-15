@@ -1,0 +1,207 @@
+{
+  "batch": "batch2-salt-organic",
+  "totalProducts": 10,
+  "categories": {
+    "salt": 4,
+    "organic": 6
+  },
+  "generatedAt": "2025-10-08",
+  "products": [
+    {
+      "id": "product-salt-iodized-salt",
+      "category": "salt",
+      "title": "Iodized Salt",
+      "url": "https://aashirvaad.com/our-products/salt/iodized-salt.html",
+      "markdownFile": "pages/product-salt-iodized-salt.md",
+      "assets": [
+        {
+          "type": "product-hero",
+          "url": "https://s7ap1.scene7.com/is/image/itcportalprod/aashirvaad%20salt-1"
+        },
+        {
+          "type": "banner",
+          "url": "https://s7ap1.scene7.com/is/image/itcportalprod/desktop%20salt%20iodized"
+        },
+        {
+          "type": "feature-1",
+          "url": "https://s7ap1.scene7.com/is/image/itcportalprod/Solar%20%20Evaporation"
+        },
+        {
+          "type": "feature-2",
+          "url": "https://s7ap1.scene7.com/is/image/itcportalprod/cleaning%20(1)"
+        },
+        {
+          "type": "feature-3",
+          "url": "https://s7ap1.scene7.com/is/image/itcportalprod/Iodine%20assured"
+        },
+        {
+          "type": "feature-4",
+          "url": "https://s7ap1.scene7.com/is/image/itcportalprod/Moisture%20lock%20packaging"
+        }
+      ]
+    },
+    {
+      "id": "product-salt-salt-active",
+      "category": "salt",
+      "title": "Salt Active",
+      "url": "https://aashirvaad.com/our-products/salt/salt-active.html",
+      "markdownFile": "pages/product-salt-salt-active.md",
+      "assets": [
+        {
+          "type": "product-hero",
+          "url": "https://s7ap1.scene7.com/is/image/itcportalprod/salt-active"
+        },
+        {
+          "type": "banner",
+          "url": "https://s7ap1.scene7.com/is/image/itcportalprod/desktop%20salt%20proactive"
+        }
+      ]
+    },
+    {
+      "id": "product-salt-himalayan-pink-salt",
+      "category": "salt",
+      "title": "Himalayan Pink Salt",
+      "url": "https://aashirvaad.com/our-products/salt/himalayan-pink-salt.html",
+      "markdownFile": "pages/product-salt-himalayan-pink-salt.md",
+      "assets": [
+        {
+          "type": "product-hero",
+          "url": "https://s7ap1.scene7.com/is/image/itcportalprod/himalayan-pink-salt"
+        },
+        {
+          "type": "banner",
+          "url": "https://s7ap1.scene7.com/is/image/itcportalprod/desktop%20pink%20salt"
+        }
+      ]
+    },
+    {
+      "id": "product-salt-iodized-crystal-salt",
+      "category": "salt",
+      "title": "Iodized Crystal Salt",
+      "url": "https://aashirvaad.com/our-products/salt/iodized-crystal-salt.html",
+      "markdownFile": "pages/product-salt-iodized-crystal-salt.md",
+      "assets": [
+        {
+          "type": "product-hero",
+          "url": "https://s7ap1.scene7.com/is/image/itcportalprod/Iodized-crystal-Salt"
+        },
+        {
+          "type": "banner",
+          "url": "https://s7ap1.scene7.com/is/image/itcportalprod/desktop%20crystal%20salt"
+        }
+      ]
+    },
+    {
+      "id": "product-organic-organic-chana-dal",
+      "category": "organic",
+      "title": "Organic Chana Dal",
+      "url": "https://aashirvaad.com/our-products/organic/organic-chana-dal.html",
+      "markdownFile": "pages/product-organic-organic-chana-dal.md",
+      "assets": [
+        {
+          "type": "product-hero",
+          "url": "https://s7ap1.scene7.com/is/image/itcportalprod/aashirvaad%20Chana%20Dal"
+        },
+        {
+          "type": "banner",
+          "url": "https://s7ap1.scene7.com/is/image/itcportalprod/dal-chana-dal-1"
+        }
+      ]
+    },
+    {
+      "id": "product-organic-organic-tur-dal",
+      "category": "organic",
+      "title": "Organic Arhar/Tur Dal",
+      "url": "https://aashirvaad.com/our-products/organic/organic-tur-dal.html",
+      "markdownFile": "pages/product-organic-organic-tur-dal.md",
+      "assets": [
+        {
+          "type": "product-hero",
+          "url": "https://s7ap1.scene7.com/is/image/itcportalprod/aashirvaad%20turdal"
+        },
+        {
+          "type": "banner",
+          "url": "https://s7ap1.scene7.com/is/image/itcportalprod/desktop-tur-dal"
+        }
+      ]
+    },
+    {
+      "id": "product-organic-organic-moong-dal",
+      "category": "organic",
+      "title": "Organic Moong Dal",
+      "url": "https://aashirvaad.com/our-products/organic/organic-moong-dal.html",
+      "markdownFile": "pages/product-organic-organic-moong-dal.md",
+      "assets": [
+        {
+          "type": "product-hero",
+          "url": "https://s7ap1.scene7.com/is/image/itcportalprod/aashirvaad%20moongdal"
+        },
+        {
+          "type": "banner",
+          "url": "https://s7ap1.scene7.com/is/image/itcportalprod/desktop-moong-dal"
+        }
+      ]
+    },
+    {
+      "id": "product-organic-organic-urad-dal",
+      "category": "organic",
+      "title": "Organic Urad Dal (Split)",
+      "url": "https://aashirvaad.com/our-products/organic/organic-urad-dal.html",
+      "markdownFile": "pages/product-organic-organic-urad-dal.md",
+      "assets": [
+        {
+          "type": "product-hero",
+          "url": "https://s7ap1.scene7.com/is/image/itcportalprod/aashirvaad%20Urad%20Dal"
+        },
+        {
+          "type": "banner",
+          "url": "https://s7ap1.scene7.com/is/image/itcportalprod/desktop-urad-dal"
+        }
+      ]
+    },
+    {
+      "id": "product-organic-organic-masoor-dal",
+      "category": "organic",
+      "title": "Organic Masoor Dal",
+      "url": "https://aashirvaad.com/our-products/organic/organic-masoor-dal.html",
+      "markdownFile": "pages/product-organic-organic-masoor-dal.md",
+      "assets": [
+        {
+          "type": "product-hero",
+          "url": "https://s7ap1.scene7.com/is/image/itcportalprod/md-split"
+        },
+        {
+          "type": "banner",
+          "url": "https://s7ap1.scene7.com/is/image/itcportalprod/dal-desktop-masur-dal"
+        }
+      ]
+    },
+    {
+      "id": "product-organic-organic-rajma",
+      "category": "organic",
+      "title": "Organic Rajma",
+      "url": "https://aashirvaad.com/our-products/organic/organic-rajma.html",
+      "markdownFile": "pages/product-organic-organic-rajma.md",
+      "assets": [
+        {
+          "type": "product-hero",
+          "url": "https://s7ap1.scene7.com/is/image/itcportalprod/rajma-1"
+        },
+        {
+          "type": "banner",
+          "url": "https://s7ap1.scene7.com/is/image/itcportalprod/dal-desktop-rajma"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalAssets": 22,
+    "assetsByType": {
+      "product-hero": 10,
+      "banner": 10,
+      "feature": 4
+    },
+    "assetHost": "s7ap1.scene7.com",
+    "assetPath": "/is/image/itcportalprod/"
+  }
+}

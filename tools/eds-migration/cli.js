@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 import { readFileSync, writeFileSync } from 'fs';
 import { convertToHtml } from './html-conversion-agent.js';
 import { uploadToDa } from './da-upload-agent.js';
-import { fixGridTableFormatting } from './utils/table-formatting.js';
+import fixGridTableFormatting from './utils/table-formatting.js';
 import { makeUrlsAbsolute, makeMarkdownUrlsAbsolute } from './utils/url-processor.js';
 
 // Simple logger to replace console statements

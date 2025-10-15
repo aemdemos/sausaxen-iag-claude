@@ -1,0 +1,81 @@
+/* Hero CTA - Call-to-action hero variant */
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 50px 40px;
+  max-width: 1200px;
+  margin: 40px auto;
+  background: #F3F3F3;
+  border-radius: 45px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-cta > div {
+  flex: 1;
+  z-index: 1;
+}
+
+.hero-cta h1 {
+  font-size: 30px;
+  line-height: 1.2;
+  margin: 0 0 20px;
+  color: #000;
+}
+
+.hero-cta p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 24px;
+  color: #000;
+}
+
+.hero-cta .button-container {
+  margin: 24px 0;
+}
+
+.hero-cta a.button {
+  background-color: #191A23;
+  color: #fff;
+  padding: 20px 35px;
+  border-radius: 14px;
+  font-size: 18px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.hero-cta a.button:hover {
+  background-color: #B9FF66;
+  color: #000;
+}
+
+.hero-cta img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (width >= 900px) {
+  .hero-cta {
+    flex-direction: row;
+    align-items: center;
+    padding: 60px 80px;
+    gap: 64px;
+  }
+
+  .hero-cta h1 {
+    font-size: 40px;
+  }
+
+  .hero-cta p {
+    font-size: 18px;
+  }
+
+  .hero-cta img {
+    max-width: 400px;
+  }
+}

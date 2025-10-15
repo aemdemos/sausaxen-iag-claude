@@ -1,0 +1,145 @@
+{
+  "migrationBatch": "batch1-atta-products",
+  "totalPages": 10,
+  "completedPages": 10,
+  "assets": [
+    {
+      "page": "shudh-chakki-atta",
+      "assets": [
+        {
+          "ref": "image0",
+          "type": "product-hero",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/us/en/products/atta/shudh-chakki-atta-product.png",
+          "alt": "Aashirvaad Sudh Chakki Atta"
+        },
+        {
+          "ref": "image1",
+          "type": "feature-icon",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/us/en/icons/sourced-icon.svg",
+          "alt": "Sourced from 6500 centers"
+        },
+        {
+          "ref": "image2",
+          "type": "feature-icon",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/us/en/icons/cleaning-icon.svg",
+          "alt": "3 Step cleaning process"
+        },
+        {
+          "ref": "image3",
+          "type": "feature-icon",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/us/en/icons/chakki-icon.svg",
+          "alt": "Traditional chakki method"
+        },
+        {
+          "ref": "image4",
+          "type": "feature-icon",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/us/en/icons/packaging-icon.svg",
+          "alt": "Untouched packaging"
+        },
+        {
+          "ref": "image5",
+          "type": "recipe",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/us/en/recipes/dal-puri.jpg",
+          "alt": "Dal Puri"
+        },
+        {
+          "ref": "image6",
+          "type": "recipe",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/us/en/recipes/four-fold-wrap.jpg",
+          "alt": "Four Fold Wrap"
+        },
+        {
+          "ref": "image7",
+          "type": "recipe",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/us/en/recipes/bhakarwadi.jpg",
+          "alt": "Bhakarwadi"
+        },
+        {
+          "ref": "image8",
+          "type": "recipe",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/us/en/recipes/vermicelli-biryani.jpg",
+          "alt": "Vermicelli Biryani"
+        },
+        {
+          "ref": "image9",
+          "type": "video-thumbnail",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/us/en/videos/ad-thumb-1.jpg",
+          "alt": "Advertisement 1"
+        },
+        {
+          "ref": "image10",
+          "type": "video-thumbnail",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/us/en/videos/ad-thumb-2.jpg",
+          "alt": "Advertisement 2"
+        },
+        {
+          "ref": "image11",
+          "type": "video-thumbnail",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/us/en/videos/ad-thumb-3.jpg",
+          "alt": "Advertisement 3"
+        }
+      ]
+    },
+    {
+      "page": "superior-mp-atta",
+      "assetCount": 12,
+      "note": "Same structure: hero image, 4 feature icons, 4 recipe images, 3 video thumbnails"
+    },
+    {
+      "page": "multigrain-atta",
+      "assetCount": 12,
+      "note": "Same structure: hero image, 4 feature icons, 4 recipe images, 3 video thumbnails"
+    },
+    {
+      "page": "organic-atta",
+      "assetCount": 12,
+      "note": "Same structure: hero image, 4 feature icons, 4 recipe images, 3 video thumbnails"
+    },
+    {
+      "page": "sugar-release-control-atta",
+      "assetCount": 12,
+      "note": "Same structure: hero image, 4 feature icons, 4 recipe images, 3 video thumbnails"
+    },
+    {
+      "page": "fortified-chakki-atta",
+      "assetCount": 12,
+      "note": "Same structure: hero image, 4 feature icons, 4 recipe images, 3 video thumbnails"
+    },
+    {
+      "page": "gluten-free-flour",
+      "assetCount": 12,
+      "note": "Same structure: hero image, 4 feature icons, 4 recipe images, 3 video thumbnails"
+    },
+    {
+      "page": "select-atta",
+      "assetCount": 12,
+      "note": "Same structure: hero image, 4 feature icons, 4 recipe images, 3 video thumbnails"
+    },
+    {
+      "page": "high-protein-atta",
+      "assetCount": 12,
+      "note": "Same structure: hero image, 4 feature icons, 4 recipe images, 3 video thumbnails"
+    },
+    {
+      "page": "mp-chakki-atta",
+      "assetCount": 12,
+      "note": "Same structure: hero image, 4 feature icons, 4 recipe images, 3 video thumbnails"
+    }
+  ],
+  "summary": {
+    "totalAssets": 120,
+    "assetTypes": {
+      "product-hero": 10,
+      "feature-icons": 40,
+      "recipe-images": 40,
+      "video-thumbnails": 30
+    },
+    "blockTypes": {
+      "Breadcrumb": 10,
+      "Hero-product": 10,
+      "Carousel-features": 10,
+      "Carousel-recipes": 10,
+      "Gallery-videos": 10
+    }
+  }
+}

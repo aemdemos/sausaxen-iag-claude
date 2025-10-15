@@ -1,0 +1,163 @@
+{
+  "page": "homepage",
+  "url": "https://aashirvaad.com/",
+  "totalImages": 15,
+  "images": [
+    {
+      "ref": "image0",
+      "alt": "Aashirvaad Atta",
+      "url": "https://s7ap1.scene7.com/is/content/itcportalstage/Logo",
+      "section": "Hero Carousel - Slide 1",
+      "description": "The Aashirvaad Promise"
+    },
+    {
+      "ref": "image1",
+      "alt": "Experience Organic",
+      "url": "https://s7ap1.scene7.com/is/content/itcportalstage/Logo-1",
+      "section": "Hero Carousel - Slide 2",
+      "description": "Experience Organic"
+    },
+    {
+      "ref": "image2",
+      "alt": "Quality on the Go",
+      "url": "https://s7ap1.scene7.com/is/content/itcportalstage/Logo-1",
+      "section": "Hero Carousel - Slide 3",
+      "description": "Quality on the Go - Instant Meals"
+    },
+    {
+      "ref": "image3",
+      "alt": "Aashirvaad Pink Salt",
+      "url": "https://s7ap1.scene7.com/is/content/itcportalstage/Logo",
+      "section": "Hero Carousel - Slide 4",
+      "description": "Aashirvaad Pink Salt"
+    },
+    {
+      "ref": "image4",
+      "alt": "Atta",
+      "url": "https://s7ap1.scene7.com/is/image/itcportalstage/aataxmultigrain?fmt=webp-alpha",
+      "section": "Product Categories",
+      "description": "Atta product category"
+    },
+    {
+      "ref": "image5",
+      "alt": "Organic",
+      "url": "https://s7ap1.scene7.com/is/image/itcportalstage/ORGANIC?fmt=webp-alpha",
+      "section": "Product Categories",
+      "description": "Organic product category"
+    },
+    {
+      "ref": "image6",
+      "alt": "Salt",
+      "url": "https://s7ap1.scene7.com/is/image/itcportalstage/saltXIdoised?fmt=webp-alpha",
+      "section": "Product Categories",
+      "description": "Salt product category"
+    },
+    {
+      "ref": "image7",
+      "alt": "Vermicelli",
+      "url": "https://s7ap1.scene7.com/is/image/itcportalstage/our_categories_5?fmt=webp-alpha",
+      "section": "Product Categories",
+      "description": "Vermicelli product category"
+    },
+    {
+      "ref": "image8",
+      "alt": "Rava",
+      "url": "https://s7ap1.scene7.com/is/image/itcportalstage/our_categories_6?fmt=webp-alpha",
+      "section": "Product Categories",
+      "description": "Rava product category"
+    },
+    {
+      "ref": "image9",
+      "alt": "Shakarpara",
+      "url": "https://s7ap1.scene7.com/is/image/itcportalprod/Shakarpara-1?fmt=webp-alpha",
+      "section": "Recipe Carousel",
+      "description": "Shakarpara recipe card"
+    },
+    {
+      "ref": "image10",
+      "alt": "Onion Samosa",
+      "url": "https://s7ap1.scene7.com/is/image/itcportalprod/Onion%20Samosa?fmt=webp-alpha",
+      "section": "Recipe Carousel",
+      "description": "Onion Samosa recipe card"
+    },
+    {
+      "ref": "image11",
+      "alt": "Dal Puri",
+      "url": "https://s7ap1.scene7.com/is/image/itcportalprod/Dal%20Puri-1?fmt=webp-alpha",
+      "section": "Recipe Carousel",
+      "description": "Dal Puri recipe card"
+    },
+    {
+      "ref": "image12",
+      "alt": "Bhakarwadi",
+      "url": "https://s7ap1.scene7.com/is/image/itcportalprod/Bhakarwadi-1?fmt=webp-alpha",
+      "section": "Recipe Carousel",
+      "description": "Bhakarwadi recipe card"
+    },
+    {
+      "ref": "image13",
+      "alt": "Atta with Multigrains",
+      "url": "https://s7ap1.scene7.com/is/image/itcportalprod/dq?fmt=webp-alpha",
+      "section": "Most Loved Products Carousel",
+      "description": "Atta with Multigrains product"
+    },
+    {
+      "ref": "image14",
+      "alt": "Sugar Release Control Atta",
+      "url": "https://s7ap1.scene7.com/is/image/itcportalprod/sugar-release-control-atta?fmt=webp-alpha",
+      "section": "Most Loved Products Carousel",
+      "description": "Sugar Release Control Atta product"
+    }
+  ],
+  "blockTypes": [
+    {
+      "type": "Carousel",
+      "instances": 4,
+      "locations": [
+        "Hero carousel (4 slides)",
+        "Recipe carousel (4+ cards)",
+        "Most loved products (2 slides)",
+        "Community carousel (3 slides)"
+      ]
+    },
+    {
+      "type": "Cards",
+      "instances": 1,
+      "locations": [
+        "Product categories (5 cards)"
+      ]
+    },
+    {
+      "type": "Hero",
+      "instances": 2,
+      "locations": [
+        "Mini Farmhouse Pizzas video section",
+        "What makes us No.1 section"
+      ]
+    },
+    {
+      "type": "Tabs",
+      "instances": 1,
+      "locations": [
+        "Our vision section (3 tabs)"
+      ]
+    }
+  ],
+  "notes": {
+    "headerFooter": "Excluded from content as per instructions",
+    "imageFormat": "Reference-style images used with URLs at bottom of markdown",
+    "tableAlignment": "Column markers properly aligned throughout",
+    "contentSections": [
+      "Hero carousel (4 slides)",
+      "Product categories (5 items)",
+      "Featured video recipe",
+      "Recipe carousel",
+      "What makes us No.1 CTA",
+      "Most loved products carousel",
+      "Customize your Atta CTA",
+      "Our vision tabs",
+      "Community carousel",
+      "Social media CTA"
+    ]
+  }
+}

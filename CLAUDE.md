@@ -75,3 +75,4 @@ The script will:
   1. `echo "" > {file}`
   2. Read {file}
   3. Write content to {file}
+- please migrate "https://aashirvaad.com/" page, you need to create the md file and assets in md file should have placeholder and path of images should be mentioned in bottom of md file. You also need to prepare asset-list.json file which contains the location of images like as sample of asset-list_sample.json. Don't upload to DA

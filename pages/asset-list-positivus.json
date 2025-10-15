@@ -1,0 +1,25 @@
+{
+  "assets": [
+    "/images/positivus-hero-illustration.svg",
+    "/images/positivus-logo-amazon.svg",
+    "/images/positivus-logo-dribbble.svg",
+    "/images/positivus-logo-hubspot.svg",
+    "/images/positivus-logo-notion.svg",
+    "/images/positivus-logo-netflix.svg",
+    "/images/positivus-logo-zoom.svg",
+    "/images/positivus-service-seo.svg",
+    "/images/positivus-service-ppc.svg",
+    "/images/positivus-service-social.svg",
+    "/images/positivus-service-email.svg",
+    "/images/positivus-service-content.svg",
+    "/images/positivus-service-analytics.svg",
+    "/images/positivus-cta-illustration.svg",
+    "/images/positivus-team-jane.jpg",
+    "/images/positivus-team-michael.jpg",
+    "/images/positivus-team-emily.jpg",
+    "/images/positivus-team-brian.jpg",
+    "/images/positivus-team-sarah.jpg",
+    "/images/positivus-team-david.jpg"
+  ],
+  "siteOrigin": "http://localhost:3000"
+}

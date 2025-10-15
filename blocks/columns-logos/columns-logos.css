@@ -1,0 +1,42 @@
+/* Columns Logos - Client logo showcase */
+.columns-logos {
+  padding: 40px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.columns-logos > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px 60px;
+}
+
+.columns-logos > div > div {
+  flex: 0 1 auto;
+}
+
+.columns-logos img {
+  height: 40px;
+  width: auto;
+  display: block;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s;
+}
+
+.columns-logos img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+@media (width >= 900px) {
+  .columns-logos {
+    padding: 60px 32px;
+  }
+
+  .columns-logos img {
+    height: 48px;
+  }
+}

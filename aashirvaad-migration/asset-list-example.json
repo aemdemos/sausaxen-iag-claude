@@ -1,0 +1,44 @@
+{
+  "homepage": {
+    "page_url": "https://aashirvaad.com/",
+    "markdown_file": "pages/homepage.md",
+    "images": [
+      {
+        "ref": "image0",
+        "url": "https://aashirvaad.com/content/dam/aashirvaad/hero-slide-1.jpg",
+        "alt": "Hero slide 1",
+        "localPath": "/images/homepage/image0.jpg"
+      },
+      {
+        "ref": "image1",
+        "url": "https://aashirvaad.com/content/dam/aashirvaad/hero-slide-2.jpg",
+        "alt": "Hero slide 2",
+        "localPath": "/images/homepage/image1.jpg"
+      },
+      {
+        "ref": "image2",
+        "url": "https://aashirvaad.com/content/dam/aashirvaad/products/multigrain.jpg",
+        "alt": "Multigrain Atta",
+        "localPath": "/images/homepage/image2.jpg"
+      }
+    ]
+  },
+  "product-shudh-chakki-atta": {
+    "page_url": "https://aashirvaad.com/our-products/atta/shudh-chakki-atta.html",
+    "markdown_file": "pages/product-shudh-chakki-atta.md",
+    "images": [
+      {
+        "ref": "image0",
+        "url": "https://aashirvaad.com/content/dam/aashirvaad/products/atta/shudh-chakki.jpg",
+        "alt": "Shudh Chakki Atta Package",
+        "localPath": "/images/products/shudh-chakki/image0.jpg"
+      },
+      {
+        "ref": "image1",
+        "url": "https://aashirvaad.com/content/dam/aashirvaad/icons/sourcing.jpg",
+        "alt": "Sourcing centers",
+        "localPath": "/images/products/shudh-chakki/image1.jpg"
+      }
+    ]
+  }
+}

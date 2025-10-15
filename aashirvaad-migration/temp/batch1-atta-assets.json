@@ -1,0 +1,468 @@
+{
+  "batch": "batch1-atta",
+  "generatedAt": "2025-10-08T10:19:48.337Z",
+  "totalProducts": 10,
+  "totalImages": 80,
+  "products": [
+    {
+      "product": "shudh-chakki-atta",
+      "sourceUrl": "https://aashirvaad.com/our-products/atta/shudh-chakki-atta.html",
+      "images": [
+        {
+          "type": "hero",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/products/shudh-chakki-atta-packshot.png",
+          "alt": "Shudh Chakki Atta"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/shudh-chakki-atta-feature-1.png",
+          "alt": "Sourced from 6500 centers"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/shudh-chakki-atta-feature-2.png",
+          "alt": "3 Step cleaning process"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/shudh-chakki-atta-feature-3.png",
+          "alt": "Traditional chakki method"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/shudh-chakki-atta-feature-4.png",
+          "alt": "Untouched packaging"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/shudh-chakki-atta-video-thumb-1.jpg",
+          "alt": "Advertisement 1"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/shudh-chakki-atta-video-thumb-2.jpg",
+          "alt": "Advertisement 2"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/shudh-chakki-atta-video-thumb-3.jpg",
+          "alt": "Advertisement 3"
+        }
+      ]
+    },
+    {
+      "product": "superior-mp-atta",
+      "sourceUrl": "https://aashirvaad.com/our-products/atta/superior-mp-atta.html",
+      "images": [
+        {
+          "type": "hero",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/products/superior-mp-atta-packshot.png",
+          "alt": "Superior MP Atta"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/superior-mp-atta-feature-1.png",
+          "alt": "Premium MP wheat"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/superior-mp-atta-feature-2.png",
+          "alt": "Superior quality"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/superior-mp-atta-feature-3.png",
+          "alt": "Traditional chakki grinding"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/superior-mp-atta-feature-4.png",
+          "alt": "Hygienic packaging"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/superior-mp-atta-video-thumb-1.jpg",
+          "alt": "Advertisement 1"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/superior-mp-atta-video-thumb-2.jpg",
+          "alt": "Advertisement 2"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/superior-mp-atta-video-thumb-3.jpg",
+          "alt": "Advertisement 3"
+        }
+      ]
+    },
+    {
+      "product": "multigrain-atta",
+      "sourceUrl": "https://aashirvaad.com/our-products/atta/multigrain-atta.html",
+      "images": [
+        {
+          "type": "hero",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/products/multigrain-atta-packshot.png",
+          "alt": "Atta with Multigrains"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/multigrain-atta-feature-1.png",
+          "alt": "6 grain blend"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/multigrain-atta-feature-2.png",
+          "alt": "High in fiber"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/multigrain-atta-feature-3.png",
+          "alt": "Nutritious"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/multigrain-atta-feature-4.png",
+          "alt": "Great taste"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/multigrain-atta-video-thumb-1.jpg",
+          "alt": "Advertisement 1"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/multigrain-atta-video-thumb-2.jpg",
+          "alt": "Advertisement 2"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/multigrain-atta-video-thumb-3.jpg",
+          "alt": "Advertisement 3"
+        }
+      ]
+    },
+    {
+      "product": "organic-atta",
+      "sourceUrl": "https://aashirvaad.com/our-products/atta/organic-atta.html",
+      "images": [
+        {
+          "type": "hero",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/products/organic-atta-packshot.png",
+          "alt": "Organic Atta"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/organic-atta-feature-1.png",
+          "alt": "100% Organic"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/organic-atta-feature-2.png",
+          "alt": "Certified organic wheat"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/organic-atta-feature-3.png",
+          "alt": "Chemical-free"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/organic-atta-feature-4.png",
+          "alt": "Sustainable farming"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/organic-atta-video-thumb-1.jpg",
+          "alt": "Advertisement 1"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/organic-atta-video-thumb-2.jpg",
+          "alt": "Advertisement 2"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/organic-atta-video-thumb-3.jpg",
+          "alt": "Advertisement 3"
+        }
+      ]
+    },
+    {
+      "product": "sugar-release-control-atta",
+      "sourceUrl": "https://aashirvaad.com/our-products/atta/sugar-release-control-atta.html",
+      "images": [
+        {
+          "type": "hero",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/products/sugar-release-control-atta-packshot.png",
+          "alt": "Sugar Release Control Atta"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/sugar-release-control-atta-feature-1.png",
+          "alt": "Helps manage sugar release"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/sugar-release-control-atta-feature-2.png",
+          "alt": "Blend of beneficial ingredients"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/sugar-release-control-atta-feature-3.png",
+          "alt": "High fiber"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/sugar-release-control-atta-feature-4.png",
+          "alt": "Great taste"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/sugar-release-control-atta-video-thumb-1.jpg",
+          "alt": "Advertisement 1"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/sugar-release-control-atta-video-thumb-2.jpg",
+          "alt": "Advertisement 2"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/sugar-release-control-atta-video-thumb-3.jpg",
+          "alt": "Advertisement 3"
+        }
+      ]
+    },
+    {
+      "product": "fortified-chakki-atta",
+      "sourceUrl": "https://aashirvaad.com/our-products/atta/fortified-chakki-atta.html",
+      "images": [
+        {
+          "type": "hero",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/products/fortified-chakki-atta-packshot.png",
+          "alt": "Fortified Chakki Atta"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/fortified-chakki-atta-feature-1.png",
+          "alt": "Fortified with vitamins"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/fortified-chakki-atta-feature-2.png",
+          "alt": "Added minerals"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/fortified-chakki-atta-feature-3.png",
+          "alt": "Nutritious"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/fortified-chakki-atta-feature-4.png",
+          "alt": "Same great taste"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/fortified-chakki-atta-video-thumb-1.jpg",
+          "alt": "Advertisement 1"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/fortified-chakki-atta-video-thumb-2.jpg",
+          "alt": "Advertisement 2"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/fortified-chakki-atta-video-thumb-3.jpg",
+          "alt": "Advertisement 3"
+        }
+      ]
+    },
+    {
+      "product": "gluten-free-flour",
+      "sourceUrl": "https://aashirvaad.com/our-products/atta/gluten-free-flour.html",
+      "images": [
+        {
+          "type": "hero",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/products/gluten-free-flour-packshot.png",
+          "alt": "Gluten Free Atta"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/gluten-free-flour-feature-1.png",
+          "alt": "100% Gluten free"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/gluten-free-flour-feature-2.png",
+          "alt": "Multi-grain blend"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/gluten-free-flour-feature-3.png",
+          "alt": "Nutritious"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/gluten-free-flour-feature-4.png",
+          "alt": "Easy to use"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/gluten-free-flour-video-thumb-1.jpg",
+          "alt": "Advertisement 1"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/gluten-free-flour-video-thumb-2.jpg",
+          "alt": "Advertisement 2"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/gluten-free-flour-video-thumb-3.jpg",
+          "alt": "Advertisement 3"
+        }
+      ]
+    },
+    {
+      "product": "select-atta",
+      "sourceUrl": "https://aashirvaad.com/our-products/atta/select-atta.html",
+      "images": [
+        {
+          "type": "hero",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/products/select-atta-packshot.png",
+          "alt": "Select Atta"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/select-atta-feature-1.png",
+          "alt": "Premium wheat"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/select-atta-feature-2.png",
+          "alt": "Superior softness"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/select-atta-feature-3.png",
+          "alt": "Selected quality"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/select-atta-feature-4.png",
+          "alt": "Perfect rotis"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/select-atta-video-thumb-1.jpg",
+          "alt": "Advertisement 1"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/select-atta-video-thumb-2.jpg",
+          "alt": "Advertisement 2"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/select-atta-video-thumb-3.jpg",
+          "alt": "Advertisement 3"
+        }
+      ]
+    },
+    {
+      "product": "high-protein-atta",
+      "sourceUrl": "https://aashirvaad.com/our-products/atta/high-protein-atta.html",
+      "images": [
+        {
+          "type": "hero",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/products/high-protein-atta-packshot.png",
+          "alt": "High Protein Atta"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/high-protein-atta-feature-1.png",
+          "alt": "High protein content"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/high-protein-atta-feature-2.png",
+          "alt": "13g per 100g"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/high-protein-atta-feature-3.png",
+          "alt": "Protein-rich blend"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/high-protein-atta-feature-4.png",
+          "alt": "Healthy choice"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/high-protein-atta-video-thumb-1.jpg",
+          "alt": "Advertisement 1"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/high-protein-atta-video-thumb-2.jpg",
+          "alt": "Advertisement 2"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/high-protein-atta-video-thumb-3.jpg",
+          "alt": "Advertisement 3"
+        }
+      ]
+    },
+    {
+      "product": "mp-chakki-atta",
+      "sourceUrl": "https://aashirvaad.com/our-products/atta/mp-chakki-atta.html",
+      "images": [
+        {
+          "type": "hero",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/products/mp-chakki-atta-packshot.png",
+          "alt": "MP Chakki Atta"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/mp-chakki-atta-feature-1.png",
+          "alt": "Premium MP wheat"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/mp-chakki-atta-feature-2.png",
+          "alt": "Chakki ground"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/mp-chakki-atta-feature-3.png",
+          "alt": "Superior quality"
+        },
+        {
+          "type": "feature",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/product-details/mp-chakki-atta-feature-4.png",
+          "alt": "Great taste"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/mp-chakki-atta-video-thumb-1.jpg",
+          "alt": "Advertisement 1"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/mp-chakki-atta-video-thumb-2.jpg",
+          "alt": "Advertisement 2"
+        },
+        {
+          "type": "video",
+          "url": "https://aashirvaad.com/content/dam/itc-foods-brands/aashirvaad/videos/mp-chakki-atta-video-thumb-3.jpg",
+          "alt": "Advertisement 3"
+        }
+      ]
+    }
+  ]
+}

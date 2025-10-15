@@ -1,0 +1,70 @@
+/* Hero Positivus - Main hero section with green accent */
+.hero-positivus {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 32px;
+  padding: 40px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-positivus > div {
+  flex: 1;
+}
+
+.hero-positivus h1 {
+  font-size: 43px;
+  line-height: 1.2;
+  margin: 0 0 20px;
+  color: #000;
+}
+
+.hero-positivus p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 24px;
+  color: #000;
+}
+
+.hero-positivus .button-container {
+  margin: 24px 0;
+}
+
+.hero-positivus a.button {
+  background-color: #191A23;
+  color: #fff;
+  padding: 20px 35px;
+  border-radius: 14px;
+  font-size: 18px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.hero-positivus a.button:hover {
+  background-color: #B9FF66;
+  color: #000;
+}
+
+.hero-positivus img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (width >= 900px) {
+  .hero-positivus {
+    flex-direction: row;
+    align-items: center;
+    padding: 60px 32px;
+    gap: 64px;
+  }
+
+  .hero-positivus h1 {
+    font-size: 60px;
+  }
+
+  .hero-positivus p {
+    font-size: 20px;
+  }
+}

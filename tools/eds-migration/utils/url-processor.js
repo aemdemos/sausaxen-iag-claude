@@ -14,40 +14,109 @@
  * URL processing utilities for converting relative URLs to absolute URLs
  */
 
+// Simple logger to replace console statements
+const logger = {
+  error: (message) => process.stderr.write(`${message}\n`),
+  warn: (message) => process.stderr.write(`${message}\n`),
+};
+
 /**
- * Convert relative URLs to absolute URLs in HTML content
- * @param {string} htmlContent - HTML content to process
- * @param {string} baseUrl - Base URL to resolve relative URLs against
- * @returns {string} - Processed HTML with absolute URLs
+ * Convert a single URL to absolute if it's relative
+ * @param {string} url - URL to process
+ * @param {URL} base - Base URL object
+ * @returns {string} - Absolute URL
  */
-export function makeUrlsAbsolute(htmlContent, baseUrl) {
-  if (!htmlContent || !baseUrl) {
-    return htmlContent;
+function makeUrlAbsolute(url, base) {
+  if (!url || typeof url !== 'string') {
+    return url;
+  }
+
+  // Skip if already absolute (has protocol)
+  if (/^https?:\/\//.test(url)) {
+    return url;
+  }
+
+  // Skip if it's a data URL, mailto, tel, etc.
+  if (/^(data:|mailto:|tel:|#)/.test(url)) {
+    return url;
+  }
+
+  // Skip if it's a JavaScript pseudo-protocol
+  if (/^javascript:/i.test(url)) {
+    return url;
   }
 
   try {
-    const base = new URL(baseUrl);
+    // Use URL constructor to resolve relative URLs
+    const absoluteUrl = new URL(url, base.href);
 
-    // Process different URL attributes
-    let processedHtml = htmlContent;
-
-    // Process image src attributes
-    processedHtml = processImageSrcAttributes(processedHtml, base);
-
-    // Process image srcset attributes
-    processedHtml = processImageSrcsetAttributes(processedHtml, base);
-
-    // Process link href attributes
-    processedHtml = processLinkHrefAttributes(processedHtml, base);
-
-    // Process other common URL attributes
-    processedHtml = processOtherUrlAttributes(processedHtml, base);
-
-    return processedHtml;
+    // Return properly encoded URL (spaces become %20, etc.)
+    return absoluteUrl.href;
   } catch (error) {
-    console.error('Error processing URLs:', error);
-    return htmlContent; // Return original if processing fails
+    logger.warn(`Failed to resolve URL: ${url} against base: ${base.href} - ${error.message}`);
+    return url; // Return original if resolution fails
   }
+}
+
+/**
+ * Convert a single URL to absolute if it's relative (for markdown processing)
+ * @param {string} url - URL to process
+ * @param {URL} base - Base URL object
+ * @returns {string} - Absolute URL with spaces preserved
+ */
+function makeUrlAbsoluteForMarkdown(url, base) {
+  if (!url || typeof url !== 'string') {
+    return url;
+  }
+
+  // Skip if already absolute (has protocol)
+  if (/^https?:\/\//.test(url)) {
+    return url;
+  }
+
+  // Skip if it's a data URL, mailto, tel, etc.
+  if (/^(data:|mailto:|tel:|#)/.test(url)) {
+    return url;
+  }
+
+  // Skip if it's a JavaScript pseudo-protocol
+  if (/^javascript:/i.test(url)) {
+    return url;
+  }
+
+  try {
+    // Use URL constructor to resolve relative URLs
+    const absoluteUrl = new URL(url, base.href);
+
+    // Return properly encoded URL (spaces become %20, etc.)
+    return absoluteUrl.href;
+  } catch (error) {
+    logger.warn(`Failed to resolve markdown URL: ${url} against base: ${base.href} - ${error.message}`);
+    return url; // Return original if resolution fails
+  }
+}
+
+/**
+ * Process srcset value containing multiple URLs and descriptors
+ * @param {string} srcsetValue - The srcset attribute value
+ * @param {URL} base - Base URL object
+ * @returns {string} - Processed srcset value
+ */
+function processSrcsetValue(srcsetValue, base) {
+  // Split by comma to get individual entries
+  const entries = srcsetValue.split(',').map((entry) => entry.trim());
+
+  const processedEntries = entries.map((entry) => {
+    // Each entry can be "url descriptor" or just "url"
+    const parts = entry.trim().split(/\s+/);
+    const url = parts[0];
+    const descriptor = parts.slice(1).join(' '); // Everything after the URL
+
+    const absoluteUrl = makeUrlAbsolute(url, base);
+    return descriptor ? `${absoluteUrl} ${descriptor}` : absoluteUrl;
+  });
+
+  return processedEntries.join(', ');
 }
 
 /**
@@ -81,29 +150,6 @@ function processImageSrcsetAttributes(html, base) {
     const processedSrcset = processSrcsetValue(srcsetValue, base);
     return `<img${beforeSrcset} srcset="${processedSrcset}"${afterSrcset}`;
   });
-}
-
-/**
- * Process srcset value containing multiple URLs and descriptors
- * @param {string} srcsetValue - The srcset attribute value
- * @param {URL} base - Base URL object
- * @returns {string} - Processed srcset value
- */
-function processSrcsetValue(srcsetValue, base) {
-  // Split by comma to get individual entries
-  const entries = srcsetValue.split(',').map((entry) => entry.trim());
-
-  const processedEntries = entries.map((entry) => {
-    // Each entry can be "url descriptor" or just "url"
-    const parts = entry.trim().split(/\s+/);
-    const url = parts[0];
-    const descriptor = parts.slice(1).join(' '); // Everything after the URL
-
-    const absoluteUrl = makeUrlAbsolute(url, base);
-    return descriptor ? `${absoluteUrl} ${descriptor}` : absoluteUrl;
-  });
-
-  return processedEntries.join(', ');
 }
 
 /**
@@ -154,49 +200,50 @@ function processOtherUrlAttributes(html, base) {
 
   // Process link rel="stylesheet" href attributes
   const stylesheetRegex = /<link([^>]*)\shref\s*=\s*["']([^"']+)["']([^>]*)/gi;
-  processedHtml = processedHtml.replace(stylesheetRegex, (match, beforeHref, hrefUrl, afterHref) => {
-    const absoluteUrl = makeUrlAbsolute(hrefUrl, base);
-    return `<link${beforeHref} href="${absoluteUrl}"${afterHref}`;
-  });
+  processedHtml = processedHtml.replace(
+    stylesheetRegex,
+    (match, beforeHref, hrefUrl, afterHref) => {
+      const absoluteUrl = makeUrlAbsolute(hrefUrl, base);
+      return `<link${beforeHref} href="${absoluteUrl}"${afterHref}`;
+    },
+  );
 
   return processedHtml;
 }
 
 /**
- * Convert a single URL to absolute if it's relative
- * @param {string} url - URL to process
- * @param {URL} base - Base URL object
- * @returns {string} - Absolute URL
+ * Convert relative URLs to absolute URLs in HTML content
+ * @param {string} htmlContent - HTML content to process
+ * @param {string} baseUrl - Base URL to resolve relative URLs against
+ * @returns {string} - Processed HTML with absolute URLs
  */
-function makeUrlAbsolute(url, base) {
-  if (!url || typeof url !== 'string') {
-    return url;
-  }
-
-  // Skip if already absolute (has protocol)
-  if (/^https?:\/\//.test(url)) {
-    return url;
-  }
-
-  // Skip if it's a data URL, mailto, tel, etc.
-  if (/^(data:|mailto:|tel:|#)/.test(url)) {
-    return url;
-  }
-
-  // Skip if it's a JavaScript pseudo-protocol
-  if (/^javascript:/i.test(url)) {
-    return url;
+export function makeUrlsAbsolute(htmlContent, baseUrl) {
+  if (!htmlContent || !baseUrl) {
+    return htmlContent;
   }
 
   try {
-    // Use URL constructor to resolve relative URLs
-    const absoluteUrl = new URL(url, base.href);
+    const base = new URL(baseUrl);
 
-    // Return properly encoded URL (spaces become %20, etc.)
-    return absoluteUrl.href;
+    // Process different URL attributes
+    let processedHtml = htmlContent;
+
+    // Process image src attributes
+    processedHtml = processImageSrcAttributes(processedHtml, base);
+
+    // Process image srcset attributes
+    processedHtml = processImageSrcsetAttributes(processedHtml, base);
+
+    // Process link href attributes
+    processedHtml = processLinkHrefAttributes(processedHtml, base);
+
+    // Process other common URL attributes
+    processedHtml = processOtherUrlAttributes(processedHtml, base);
+
+    return processedHtml;
   } catch (error) {
-    console.warn(`Failed to resolve URL: ${url} against base: ${base.href}`, error);
-    return url; // Return original if resolution fails
+    logger.error(`Error processing URLs: ${error.message}`);
+    return htmlContent; // Return original if processing fails
   }
 }
 
@@ -239,46 +286,8 @@ export function makeMarkdownUrlsAbsolute(markdownContent, baseUrl) {
 
     return processedMarkdown;
   } catch (error) {
-    console.error('Error processing markdown URLs:', error);
+    logger.error(`Error processing markdown URLs: ${error.message}`);
     return markdownContent; // Return original on error
-  }
-}
-
-/**
- * Convert a single URL to absolute if it's relative (for markdown processing)
- * @param {string} url - URL to process
- * @param {URL} base - Base URL object
- * @returns {string} - Absolute URL with spaces preserved
- */
-function makeUrlAbsoluteForMarkdown(url, base) {
-  if (!url || typeof url !== 'string') {
-    return url;
-  }
-
-  // Skip if already absolute (has protocol)
-  if (/^https?:\/\//.test(url)) {
-    return url;
-  }
-
-  // Skip if it's a data URL, mailto, tel, etc.
-  if (/^(data:|mailto:|tel:|#)/.test(url)) {
-    return url;
-  }
-
-  // Skip if it's a JavaScript pseudo-protocol
-  if (/^javascript:/i.test(url)) {
-    return url;
-  }
-
-  try {
-    // Use URL constructor to resolve relative URLs
-    const absoluteUrl = new URL(url, base.href);
-
-    // Return properly encoded URL (spaces become %20, etc.)
-    return absoluteUrl.href;
-  } catch (error) {
-    console.warn(`Failed to resolve markdown URL: ${url} against base: ${base.href}`, error);
-    return url; // Return original if resolution fails
   }
 }
 

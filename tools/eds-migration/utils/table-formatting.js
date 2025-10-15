@@ -16,29 +16,128 @@
  */
 
 /**
- * Fix grid table formatting to ensure exact column alignment
- * Each column across ALL rows must have the same width
+ * Calculate maximum width needed for each column
  */
-export function fixGridTableFormatting(markdown) {
-  const lines = markdown.split('\n');
-  const fixedLines = [];
-  let i = 0;
+function calculateColumnWidths(contentLines) {
+  const columnWidths = [];
 
-  while (i < lines.length) {
-    const line = lines[i];
+  contentLines.forEach((line) => {
+    const columns = line.split('|').slice(1, -1); // Remove empty first/last
+    columns.forEach((column, index) => {
+      if (!columnWidths[index]) {
+        columnWidths[index] = 0;
+      }
+      columnWidths[index] = Math.max(columnWidths[index], column.length);
+    });
+  });
 
-    // Check if this starts a table
-    if (line.match(/^\+[-=+]+\+/)) {
-      const tableResult = fixTableBlock(lines, i);
-      fixedLines.push(...tableResult.fixedLines);
-      i = tableResult.nextIndex;
-    } else {
-      fixedLines.push(line);
-      i++;
+  return columnWidths;
+}
+
+/**
+ * Create border line with consistent column widths
+ */
+function createBorderFromWidths(columnWidths, useEquals = false) {
+  const char = useEquals ? '=' : '-';
+  let border = '+';
+  columnWidths.forEach((width) => {
+    border += `${char.repeat(width)}+`;
+  });
+  return border;
+}
+
+/**
+ * Create a header row that spans all content columns
+ */
+function createHeaderRow(headerLine, columnWidths) {
+  // Parse the header line to extract meaningful content
+  const headerColumns = headerLine.split('|').slice(1, -1); // Remove empty first/last elements
+
+  // Extract the actual header text (usually in the first column, ignore empty padding columns)
+  let headerText = '';
+  headerColumns.forEach((col) => {
+    const trimmed = col.trim();
+    if (trimmed && !headerText) {
+      headerText = trimmed;
+    }
+  });
+
+  // If no meaningful content found, use the first column as-is
+  if (!headerText) {
+    headerText = headerColumns[0] || '';
+  }
+
+  // Calculate total width needed (all column widths + separators between columns)
+  const totalContentWidth = columnWidths.reduce((sum, width) => sum + width, 0)
+    + (columnWidths.length - 1);
+
+  // Create a properly padded single-column header that spans all content columns
+  let paddedHeader = ` ${headerText} `; // Add minimal padding around text
+
+  // Pad to match total content width
+  if (paddedHeader.length < totalContentWidth) {
+    const extraPadding = totalContentWidth - paddedHeader.length;
+    paddedHeader += ' '.repeat(extraPadding);
+  } else if (paddedHeader.length > totalContentWidth) {
+    // Trim if somehow too long, but preserve the text
+    paddedHeader = paddedHeader.substring(0, totalContentWidth);
+  }
+
+  return `|${paddedHeader}|`;
+}
+
+/**
+ * Pad content line cells to match column widths
+ */
+function padContentLine(line, columnWidths) {
+  const columns = line.split('|').slice(1, -1);
+  const paddedColumns = columns.map((column, index) => {
+    const targetWidth = columnWidths[index] || column.length;
+    if (column.length < targetWidth) {
+      // Pad with spaces at the end
+      return column + ' '.repeat(targetWidth - column.length);
+    }
+    return column;
+  });
+
+  return `|${paddedColumns.join('|')}|`;
+}
+
+/**
+ * Separate header rows from content rows based on position relative to separator lines
+ */
+function separateHeaderAndContentSections(tableLines) {
+  const headerRows = [];
+  const contentRows = [];
+
+  let headerSeparatorFound = false;
+
+  for (let i = 0; i < tableLines.length; i += 1) {
+    const item = tableLines[i];
+    const { line } = item;
+
+    if (line.match(/^\+[-=]+\+/)) {
+      if (line.includes('=')) {
+        // This is a header separator - anything before this is header
+        headerSeparatorFound = true;
+      }
+    } else if (line.match(/^\|.*\|$/)) {
+      if (!headerSeparatorFound) {
+        // We haven't seen a header separator yet, so this might be header
+        headerRows.push(item);
+      } else {
+        // We've seen a header separator, so this is content
+        contentRows.push(item);
+      }
     }
   }
 
-  return fixedLines.join('\n');
+  // If no header separator was found, treat all as content rows
+  if (!headerSeparatorFound) {
+    return { headerRows: [], contentRows: tableLines.filter((item) => item.line.match(/^\|.*\|$/)) };
+  }
+
+  return { headerRows, contentRows };
 }
 
 /**
@@ -53,13 +152,13 @@ function fixTableBlock(lines, startIndex) {
     const line = lines[i];
     if (line.match(/^(\+[-=+]+\+|\|.*\|)$/)) {
       tableLines.push({ line, index: i });
-      i++;
+      i += 1;
     } else if (line.trim() === '') {
       // Empty line might be part of table (multi-line cells)
       const nextLine = lines[i + 1];
       if (nextLine && nextLine.match(/^(\+[-=+]+\+|\|.*\|)$/)) {
         tableLines.push({ line, index: i });
-        i++;
+        i += 1;
       } else {
         break; // End of table
       }
@@ -112,129 +211,27 @@ function fixTableBlock(lines, startIndex) {
 }
 
 /**
- * Separate header rows from content rows based on position relative to separator lines
+ * Fix grid table formatting to ensure exact column alignment
+ * Each column across ALL rows must have the same width
  */
-function separateHeaderAndContentSections(tableLines) {
-  const headerRows = [];
-  const contentRows = [];
+export default function fixGridTableFormatting(markdown) {
+  const lines = markdown.split('\n');
+  const fixedLines = [];
+  let i = 0;
 
-  let inHeaderSection = false;
-  let headerSeparatorFound = false;
+  while (i < lines.length) {
+    const line = lines[i];
 
-  for (let i = 0; i < tableLines.length; i++) {
-    const item = tableLines[i];
-    const { line } = item;
-
-    if (line.match(/^\+[-=]+\+/)) {
-      if (line.includes('=')) {
-        // This is a header separator - anything before this is header
-        headerSeparatorFound = true;
-        inHeaderSection = false; // Switch to content section after this
-      }
-    } else if (line.match(/^\|.*\|$/)) {
-      if (!headerSeparatorFound) {
-        // We haven't seen a header separator yet, so this might be header
-        inHeaderSection = true;
-        headerRows.push(item);
-      } else {
-        // We've seen a header separator, so this is content
-        contentRows.push(item);
-      }
+    // Check if this starts a table
+    if (line.match(/^\+[-=+]+\+/)) {
+      const tableResult = fixTableBlock(lines, i);
+      fixedLines.push(...tableResult.fixedLines);
+      i = tableResult.nextIndex;
+    } else {
+      fixedLines.push(line);
+      i += 1;
     }
   }
 
-  // If no header separator was found, treat all as content rows
-  if (!headerSeparatorFound) {
-    return { headerRows: [], contentRows: tableLines.filter((item) => item.line.match(/^\|.*\|$/)) };
-  }
-
-  return { headerRows, contentRows };
-}
-
-/**
- * Create a header row that spans all content columns
- */
-function createHeaderRow(headerLine, columnWidths) {
-  // Parse the header line to extract meaningful content
-  const headerColumns = headerLine.split('|').slice(1, -1); // Remove empty first/last elements
-
-  // Extract the actual header text (usually in the first column, ignore empty padding columns)
-  let headerText = '';
-  for (const col of headerColumns) {
-    const trimmed = col.trim();
-    if (trimmed) {
-      headerText = trimmed;
-      break; // Take the first non-empty column as the header
-    }
-  }
-
-  // If no meaningful content found, use the first column as-is
-  if (!headerText) {
-    headerText = headerColumns[0] || '';
-  }
-
-  // Calculate total width needed (all column widths + separators between columns)
-  const totalContentWidth = columnWidths.reduce((sum, width) => sum + width, 0) + (columnWidths.length - 1);
-
-  // Create a properly padded single-column header that spans all content columns
-  let paddedHeader = ` ${headerText} `; // Add minimal padding around text
-
-  // Pad to match total content width
-  if (paddedHeader.length < totalContentWidth) {
-    const extraPadding = totalContentWidth - paddedHeader.length;
-    paddedHeader += ' '.repeat(extraPadding);
-  } else if (paddedHeader.length > totalContentWidth) {
-    // Trim if somehow too long, but preserve the text
-    paddedHeader = paddedHeader.substring(0, totalContentWidth);
-  }
-
-  return `|${paddedHeader}|`;
-}
-
-/**
- * Calculate maximum width needed for each column
- */
-function calculateColumnWidths(contentLines) {
-  const columnWidths = [];
-
-  contentLines.forEach((line) => {
-    const columns = line.split('|').slice(1, -1); // Remove empty first/last
-    columns.forEach((column, index) => {
-      if (!columnWidths[index]) {
-        columnWidths[index] = 0;
-      }
-      columnWidths[index] = Math.max(columnWidths[index], column.length);
-    });
-  });
-
-  return columnWidths;
-}
-
-/**
- * Pad content line cells to match column widths
- */
-function padContentLine(line, columnWidths) {
-  const columns = line.split('|').slice(1, -1);
-  const paddedColumns = columns.map((column, index) => {
-    const targetWidth = columnWidths[index] || column.length;
-    if (column.length < targetWidth) {
-      // Pad with spaces at the end
-      return column + ' '.repeat(targetWidth - column.length);
-    }
-    return column;
-  });
-
-  return `|${paddedColumns.join('|')}|`;
-}
-
-/**
- * Create border line with consistent column widths
- */
-function createBorderFromWidths(columnWidths, useEquals = false) {
-  const char = useEquals ? '=' : '-';
-  let border = '+';
-  columnWidths.forEach((width) => {
-    border += `${char.repeat(width)}+`;
-  });
-  return border;
+  return fixedLines.join('\n');
 }

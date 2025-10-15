@@ -1,0 +1,120 @@
+/* Carousel Testimonials - Client testimonial slider */
+.carousel-testimonials {
+  padding: 40px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #191A23;
+  border-radius: 45px;
+  color: #fff;
+}
+
+.carousel-testimonials-slides-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-testimonials-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-testimonials-slide {
+  min-width: 100%;
+  padding: 40px;
+  text-align: left;
+}
+
+.carousel-testimonials-slide p:first-child {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 32px;
+  color: #fff;
+  position: relative;
+  padding-left: 40px;
+}
+
+.carousel-testimonials-slide p:first-child::before {
+  content: '"';
+  position: absolute;
+  left: 0;
+  top: -10px;
+  font-size: 72px;
+  color: #B9FF66;
+  line-height: 1;
+}
+
+.carousel-testimonials-slide p strong {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #B9FF66;
+}
+
+.carousel-testimonials-slide p:last-child {
+  font-size: 16px;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.carousel-testimonials-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.carousel-testimonials-nav-button {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.carousel-testimonials-nav-button:hover {
+  background: #B9FF66;
+  border-color: #B9FF66;
+  color: #191A23;
+}
+
+.carousel-testimonials-indicators {
+  display: flex;
+  gap: 12px;
+}
+
+.carousel-testimonials-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.3;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.carousel-testimonials-indicator.active {
+  opacity: 1;
+  background: #B9FF66;
+}
+
+@media (width >= 900px) {
+  .carousel-testimonials {
+    padding: 60px 80px;
+  }
+
+  .carousel-testimonials-slide {
+    padding: 60px 80px;
+  }
+
+  .carousel-testimonials-slide p:first-child {
+    font-size: 20px;
+  }
+}

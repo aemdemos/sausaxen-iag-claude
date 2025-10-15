@@ -1,0 +1,20 @@
+# Environment variables
+.env
+.env.local
+
+# Output files
+output/
+*.json
+
+# Node modules (if you add dependencies later)
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+

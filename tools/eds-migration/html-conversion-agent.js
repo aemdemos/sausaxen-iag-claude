@@ -18,7 +18,7 @@ import split from '@adobe/helix-html-pipeline/src/steps/split-sections.js';
 import fixSections from '@adobe/helix-html-pipeline/src/steps/fix-sections.js';
 import createPageBlocks from '@adobe/helix-html-pipeline/src/steps/create-page-blocks.js';
 import { makeUrlsAbsolute, makeMarkdownUrlsAbsolute } from './utils/url-processor.js';
-import { fixGridTableFormatting } from './utils/table-formatting.js';
+import fixGridTableFormatting from './utils/table-formatting.js';
 
 /**
  * Convert markdown to HTML
