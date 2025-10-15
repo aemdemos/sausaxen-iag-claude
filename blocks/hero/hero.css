@@ -31,21 +31,32 @@
 }
 
 /* Babylab-style hero: simple image display with no text overlay */
-main .section.hero-container .hero:not(:has(h1)):not(:has(h2)):not(:has(h3)):not(:has(p)) {
+main .section.hero-container .hero:not(:has(h1)):not(:has(h2)):not(:has(h3)):not(:has(p)),
+main .section.hero-container .hero:only-child {
   padding: 0;
   min-height: auto;
+  margin: 0;
 }
 
-main .section.hero-container .hero:not(:has(h1)):not(:has(h2)):not(:has(h3)):not(:has(p)) picture {
+main .section.hero-container .hero:not(:has(h1)):not(:has(h2)):not(:has(h3)):not(:has(p)) picture,
+main .section.hero-container .hero:only-child picture {
   position: static;
   z-index: auto;
+  display: block;
 }
 
-main .section.hero-container .hero:not(:has(h1)):not(:has(h2)):not(:has(h3)):not(:has(p)) img {
+main .section.hero-container .hero:not(:has(h1)):not(:has(h2)):not(:has(h3)):not(:has(p)) img,
+main .section.hero-container .hero:only-child img {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
+  max-height: 400px;
+}
+
+main .section.hero-container .hero-wrapper {
+  max-width: unset;
+  padding: 0;
 }
 
 @media (width >= 900px) {
