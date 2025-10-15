@@ -1,6 +1,8 @@
 /* BabyLab Cards - Card item style with background images matching original site */
+/* Support both decorated (ul > li) and undecorated (> div) structures */
 
-.cards-babylab > ul {
+.cards-babylab > ul,
+.cards-babylab {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -9,28 +11,43 @@
   gap: 20px;
 }
 
-.cards-babylab > ul > li {
+.cards-babylab > ul > li,
+.cards-babylab > div {
   flex: 1 1 calc(33.333% - 20px);
   min-width: 250px;
+  height: 160px;
   border: none;
   background-color: transparent;
-}
-
-/* Hide the image wrapper - we'll use background images instead */
-.cards-babylab .cards-card-image {
-  display: none;
-}
-
-/* Extract image URL and apply as background via inline style or JS */
-.cards-babylab > ul > li {
   position: relative;
-  height: 160px;
+  overflow: hidden;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* Content overlay at bottom */
+/* First div in each card (image container) */
+.cards-babylab > ul > li > div:first-child,
+.cards-babylab > div > div:first-child,
+.cards-babylab .cards-card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  line-height: 0;
+}
+
+.cards-babylab img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: unset;
+}
+
+/* Second div in each card (text container) */
+.cards-babylab > ul > li > div:last-child,
+.cards-babylab > div > div:last-child,
 .cards-babylab .cards-card-body {
   position: absolute;
   bottom: 0;
@@ -39,9 +56,12 @@
   margin: 0;
   padding: 16px;
   background: rgba(255, 255, 255, 0.95);
+  z-index: 1;
   transition: background 0.3s ease;
 }
 
+.cards-babylab > ul > li:hover > div:last-child,
+.cards-babylab > div:hover > div:last-child,
 .cards-babylab > ul > li:hover .cards-card-body {
   background: rgba(255, 255, 255, 1);
 }
@@ -72,11 +92,13 @@
 
 /* Mobile responsive */
 @media (max-width: 768px) {
-  .cards-babylab > ul {
+  .cards-babylab > ul,
+  .cards-babylab {
     flex-direction: column;
   }
 
-  .cards-babylab > ul > li {
+  .cards-babylab > ul > li,
+  .cards-babylab > div {
     flex: 1 1 100%;
     height: 180px;
   }
