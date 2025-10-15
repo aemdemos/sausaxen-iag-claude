@@ -30,8 +30,30 @@
   height: 100%;
 }
 
+/* Babylab-style hero: simple image display with no text overlay */
+main .section.hero-container .hero:not(:has(h1)):not(:has(h2)):not(:has(h3)):not(:has(p)) {
+  padding: 0;
+  min-height: auto;
+}
+
+main .section.hero-container .hero:not(:has(h1)):not(:has(h2)):not(:has(h3)):not(:has(p)) picture {
+  position: static;
+  z-index: auto;
+}
+
+main .section.hero-container .hero:not(:has(h1)):not(:has(h2)):not(:has(h3)):not(:has(p)) img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
 @media (width >= 900px) {
   .hero {
     padding: 40px 32px;
+  }
+
+  main .section.hero-container .hero:not(:has(h1)):not(:has(h2)):not(:has(h3)):not(:has(p)) {
+    padding: 0;
   }
 }
